@@ -1,2 +1,2 @@
 # k8s-yaml
-service,ingress......
+提供生成service,deployment,ingress
