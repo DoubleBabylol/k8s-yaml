@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-ding
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  tls:
+  - hosts:
+    - test.ding.com
+    secretName: ding-ingress-secret
+  rules:
+  - host: test.ding.com
+    http:
+      paths:
+      - path:
+        backend:
+          serviceName: myapp-ding
+          servicePort: 80
